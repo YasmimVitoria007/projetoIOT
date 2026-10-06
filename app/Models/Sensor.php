@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Sensor extends Model
 {
     use HasFactory;
+     protected $fillable = [
+        'ambiente_id',
+        'codigo',
+        'tipo',
+        'descricao',
+        'status',
+    ];
+    public function registros(){
+        return $this->hasMany(Registro::class);
+    }
+    public function ambientes(){
+        return $this->belongsTo(Ambiente::class);
+    }
+
 }

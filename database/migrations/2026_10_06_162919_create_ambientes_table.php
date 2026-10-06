@@ -13,6 +13,9 @@ return new class extends Migration
     {
         Schema::create('ambientes', function (Blueprint $table) {
             $table->id();
+            $table->string('nome');
+            $table->string('descricao')->nullable();
+            $table->string('status')->default(true);
             $table->timestamps();
         });
     }
